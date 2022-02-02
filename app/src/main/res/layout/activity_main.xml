@@ -13,7 +13,7 @@
         android:gravity="center">
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/play_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/play"
@@ -21,10 +21,10 @@
             />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/res_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/previous"
+            android:text="@string/score"
             android:textAllCaps="false"
             />
     </LinearLayout>

@@ -4,8 +4,11 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/layout/activity_main.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/layout/activity_play.xml" value="0.1793478260869565" />
-        <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/layout/activity_res.xml" value="0.1793478260869565" />
+        <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/layout/activity_play.xml" value="0.33" />
+        <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/layout/activity_res.xml" value="0.33" />
+        <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/layout/activity_result.xml" value="0.17300724637681159" />
+        <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/menu/nav_menu.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/sdf07/AndroidStudioProjects/MentalCounting/app/src/main/res/menu/submit_menu.xml" value="0.36666666666666664" />
       </map>
     </option>
   </component>

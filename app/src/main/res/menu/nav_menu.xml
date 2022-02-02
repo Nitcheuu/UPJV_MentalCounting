@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/submit_compute_button"
+        android:title="@string/navigation_menu"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/main_menu_button"
+        android:title="@string/main_menu" />
+
+    <item
+        android:id="@+id/reset_menu_button"
+        android:title="@string/reset_attempt" />
+
+</menu>

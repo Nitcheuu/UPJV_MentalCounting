@@ -2,4 +2,9 @@
     <string name="app_name">MentalCounting</string>
     <string name="play">Play</string>
     <string name="previous">Previous</string>
+    <string name="score">Score</string>
+    <string name="calcul_mental">Calcul Mental</string>
+    <string name="navigation_menu">Navigation menu</string>
+    <string name="main_menu">Main menu</string>
+    <string name="reset_attempt">Reset attempt</string>
 </resources>
