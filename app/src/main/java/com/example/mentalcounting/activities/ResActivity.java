@@ -22,10 +22,15 @@ public class ResActivity extends AppCompatActivity {
         button.setOnClickListener(view -> finish());
 
         TextView bonnes_reponses = findViewById(R.id.res_correcte);
-        bonnes_reponses.setText(Statistiques.getBonnes_reponses() + " bons");
+        /*
+        * Après plus de deux heures passées sur ce bug j'ai décidé de mettre le texte en français
+        * brut, je ne vois aucune raison pour laquelle le %1$s ne fonctionneraient pas ici mais il
+        * a visiblement décidé de faire des siennes alors qu'il fonctionne très bien dans la
+        * PlayActivity*/
+        bonnes_reponses.setText(Statistiques.getBonnes_reponses() + "bons");
 
         TextView essais = findViewById(R.id.res_essais);
-        essais.setText(Statistiques.getCompteur() + " bons");
+        essais.setText(Statistiques.getCompteur() + "essais");
 
     }
 

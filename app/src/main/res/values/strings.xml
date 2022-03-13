@@ -11,4 +11,7 @@
     <string name="play_submit">Submit</string>
     <string name="right_answer">Right, result is %1$s</string>
     <string name="wrong_answer">Wrong, result is %1$s</string>
+    <string name="on">on</string>
+    <string name="test_1">%1$s right</string>
+    <string name="test_2">%1$s attempts</string>
 </resources>

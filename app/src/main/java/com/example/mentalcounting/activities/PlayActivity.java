@@ -26,7 +26,7 @@ import java.util.Random;
 
 public class PlayActivity extends AppCompatActivity {
 
-    private final String[] operateurs = {"+", "-", "x"};
+    private final String[] operateurs = {"+", "-", "x", "/"};
     private int bonne_reponse;
     /**
      * Appelée au démarrage de l'acitivité

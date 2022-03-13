@@ -10,4 +10,5 @@
     <string name="play_submit">Soumettre</string>
     <string name="right_answer">Le résultat est bien %1$s</string>
     <string name="wrong_answer">Faux, le résultat est %1$s</string>
+    <string name="on">on</string>
 </resources>
