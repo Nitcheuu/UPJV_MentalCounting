@@ -11,4 +11,6 @@
     <string name="right_answer">Le résultat est bien %1$s</string>
     <string name="wrong_answer">Faux, le résultat est %1$s</string>
     <string name="on">on</string>
+    <string name="operation_text">%1$s %2$s %3$s</string>
+    <string name="empty_error">Veuillez saisir une valeur</string>
 </resources>

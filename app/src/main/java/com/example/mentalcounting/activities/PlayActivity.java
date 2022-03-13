@@ -19,7 +19,9 @@ import com.example.mentalcounting.models.OperationModel;
 import com.example.mentalcounting.models.exceptions.DiviseException;
 import com.example.mentalcounting.models.exceptions.OperatorException;
 import com.example.mentalcounting.models.exceptions.ResultException;
+import com.example.mentalcounting.outils.GenerationService;
 import com.example.mentalcounting.outils.OperationsService;
+import com.example.mentalcounting.outils.ResolutionService;
 import com.example.mentalcounting.outils.Statistiques;
 
 import java.util.Random;
@@ -28,6 +30,7 @@ public class PlayActivity extends AppCompatActivity {
 
     private final String[] operateurs = {"+", "-", "x", "/"};
     private int bonne_reponse;
+    private OperationModel operation;
     /**
      * Appelée au démarrage de l'acitivité
      * @param savedInstanceState : paramètre par défault
@@ -52,7 +55,7 @@ public class PlayActivity extends AppCompatActivity {
             }
         });
         try {
-            this.generationAleatoire();
+            this.nouveauCalcul();
         } catch (OperatorException e) {
             e.printStackTrace();
         } catch (ResultException e) {
@@ -63,40 +66,20 @@ public class PlayActivity extends AppCompatActivity {
 
     }
 
-    protected void generationAleatoire() throws OperatorException, ResultException, DiviseException {
+    protected void nouveauCalcul() throws OperatorException, ResultException, DiviseException {
 
-        // Génération des nombres
-        int nombre_a = new Random().nextInt(100);
-        int nombre_b = new Random().nextInt(100);
-        int nombre_operateur = new Random().nextInt(2);
-        String operateur = "";
+        this.operation = new GenerationService().generation_facile();
 
-        if (nombre_a <= 10){
-            operateur = "x";
-        }else if (nombre_b <= 2 && nombre_a%2 == 0){
-            operateur = "/";
-        }else{
-            operateur = this.operateurs[nombre_operateur];
-        }
-
-
-        // Création du modèle de l'opération
-        OperationModel operation = new OperationModel(
-                String.valueOf(nombre_a),
-                String.valueOf(nombre_b),
-                operateur
-        );
-
-
+        String affichage = getString(R.string.operation_text, this.operation.getFirstValue(), this.operation.getOperator(), this.operation.getSecondValue());
         // Récupération du textView qui affiche le calcul
         TextView calcul = findViewById(R.id.text_calcul);
         // Changement du texte
-        calcul.setText(nombre_a + " " + operateur + " "  + nombre_b);
+        calcul.setText(affichage);
         // Changement de la visibilité
         calcul.setVisibility(View.VISIBLE);
         // Calcul de la bonne réponse
         //this.calculerBonneReponse(nombre_a, nombre_b, this.operateurs[nombre_operateur]);
-        this.bonne_reponse = new OperationsService().computeResult(operation);
+        this.bonne_reponse = new OperationsService().computeResult(this.operation);
     }
 
     protected void changerLesTextes(int visibilite_bon, int visibilite_mauvais){
@@ -112,18 +95,31 @@ public class PlayActivity extends AppCompatActivity {
             Statistiques.addBonnes_reponses(1);
     }
 
+    protected void afficherErreurEmpty(){
+        TextView resultat_bon = findViewById(R.id.resultat_bon);
+        resultat_bon.setVisibility(View.GONE);
+        TextView erreur_empty = findViewById(R.id.resultat_faux);
+        erreur_empty.setVisibility(View.VISIBLE);
+        erreur_empty.setText(R.string.empty_error);
+    }
+
     protected void envoyerResultat() throws OperatorException, ResultException, DiviseException {
         EditText resultat_utilisateur = findViewById(R.id.resultat_utilisateur);
         String resultat = resultat_utilisateur.getText().toString();
-
-        if (resultat.equals(String.valueOf(this.bonne_reponse))){
-            this.changerLesTextes(View.VISIBLE, View.GONE);
-        }else{
-            this.changerLesTextes(View.GONE, View.VISIBLE);
+        if (resultat.isEmpty()){
+            this.afficherErreurEmpty();
         }
-        resultat_utilisateur.getText().clear();
-        Statistiques.addCompteur(1);
-        this.generationAleatoire();
+        else{
+            if (ResolutionService.verifierResultat(this.operation, resultat)){
+                this.changerLesTextes(View.VISIBLE, View.GONE);
+            }else{
+                this.changerLesTextes(View.GONE, View.VISIBLE);
+            }
+            resultat_utilisateur.getText().clear();
+            Statistiques.addCompteur(1);
+            this.nouveauCalcul();
+        }
+
     }
 
     /**

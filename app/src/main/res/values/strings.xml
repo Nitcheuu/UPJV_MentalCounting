@@ -14,4 +14,6 @@
     <string name="on">on</string>
     <string name="test_1">%1$s right</string>
     <string name="test_2">%1$s attempts</string>
+    <string name="operation_text">%1$s %2$s %3$s</string>
+    <string name="empty_error">Please, enter a value</string>
 </resources>
