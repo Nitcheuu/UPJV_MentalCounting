@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="play">Play</string>
-    <string name="previous">Previous</string>
-    <string name="reset_attempt">Reset attempt</string>
+    <string name="play">Jouer</string>
+    <string name="app_name">Calcul mental</string>
+    <string name="navigation_menu">Menu</string>
+    <string name="previous">Précédent</string>
+    <string name="le_resultat_est_bien_1_i">Le resultat est bien %1$i</string>
+    <string name="main_menu">Menu principal</string>
+    <string name="reset_attempt">Recommencer</string>
+    <string name="play_submit">Soumettre</string>
+    <string name="right_answer">Le résultat est bien %1$s</string>
+    <string name="wrong_answer">Faux, le résultat est %1$s</string>
 </resources>

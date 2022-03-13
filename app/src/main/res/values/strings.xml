@@ -7,4 +7,8 @@
     <string name="navigation_menu">Navigation menu</string>
     <string name="main_menu">Main menu</string>
     <string name="reset_attempt">Reset attempt</string>
+    <string name="le_resultat_est_bien_1_i">Le resultat est bien %1$i</string>
+    <string name="play_submit">Submit</string>
+    <string name="right_answer">Right, result is %1$s</string>
+    <string name="wrong_answer">Wrong, result is %1$s</string>
 </resources>

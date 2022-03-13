@@ -10,13 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MentalCounting">
         <activity
-            android:name=".PlayActivity"
+            android:name=".activities.PlayActivity"
             android:exported="false" />
         <activity
-            android:name=".ResActivity"
+            android:name=".activities.ResActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".activities.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

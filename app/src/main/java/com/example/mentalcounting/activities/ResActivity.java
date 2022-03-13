@@ -1,9 +1,14 @@
-package com.example.mentalcounting;
+package com.example.mentalcounting.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.TextView;
+
+import com.example.mentalcounting.outils.Statistiques;
+
+import com.example.mentalcounting.R;
 
 public class ResActivity extends AppCompatActivity {
 
@@ -15,6 +20,12 @@ public class ResActivity extends AppCompatActivity {
         // Permet de retourner sur l'activité précédente
         Button button = findViewById(R.id.previous_button);
         button.setOnClickListener(view -> finish());
+
+        TextView bonnes_reponses = findViewById(R.id.res_correcte);
+        bonnes_reponses.setText(Statistiques.getBonnes_reponses() + " bons");
+
+        TextView essais = findViewById(R.id.res_essais);
+        essais.setText(Statistiques.getCompteur() + " bons");
 
     }
 
